@@ -19,3 +19,43 @@
 .container{
     margin-top: 20rem
 }
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .btn-lg {
+        --bs-btn-padding-y: 0.5rem;
+        --bs-btn-padding-x: 3rem;
+        --bs-btn-font-size: 4rem;
+        --bs-btn-border-radius: 1rem;
+        background-color: rgb(39, 39, 39);
+    }
+  }
+
+@media (min-width: 1000px) and (max-width: 1200px) {
+    .btn-lg {
+        --bs-btn-padding-y: 0.5rem;
+        --bs-btn-padding-x: 2rem;
+        --bs-btn-font-size: 5rem;
+        --bs-btn-border-radius: 1rem;
+        background-color: rgb(39, 39, 39);
+    }
+  }
+
+@media (min-width: 850px) and (max-width: 999px) {
+    .btn-lg {
+        --bs-btn-padding-y: 0.5rem;
+        --bs-btn-padding-x: 1rem;
+        --bs-btn-font-size: 5rem;
+        --bs-btn-border-radius: 1rem;
+        background-color: rgb(39, 39, 39);
+    }
+  }
+
+@media (min-width: 700px) and (max-width: 849px) {
+    .btn-lg {
+        --bs-btn-padding-y: 0.5rem;
+        --bs-btn-padding-x: 1rem;
+        --bs-btn-font-size: 2.3rem;
+        --bs-btn-border-radius: 1rem;
+        background-color: rgb(39, 39, 39);
+    }
+  }

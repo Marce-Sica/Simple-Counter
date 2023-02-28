@@ -20,29 +20,48 @@ let cienmilesSeconds = 0;
 setInterval(() => {
   tiempoSegundos = tiempoSegundos + 1;
 
-  if(tiempoSegundos % 10 == 0 && tiempoSegundos != 0){
-    tiempoSegundos = 0
-    decenaSeconds++
+  if (tiempoSegundos % 10 == 0 && tiempoSegundos != 0) {
+    tiempoSegundos = 0;
+    decenaSeconds++;
   }
-  if(decenaSeconds % 10 == 0 && decenaSeconds != 0){
-    decenaSeconds = 0
-    centenaSeconds++
+  if (decenaSeconds % 6 == 0 && decenaSeconds != 0) {
+    decenaSeconds = 0;
+    centenaSeconds++;
   }
-  if(centenaSeconds % 10 == 0 && centenaSeconds != 0){
-    centenaSeconds = 0
-    milesSeconds++
+  if (centenaSeconds % 10 == 0 && centenaSeconds != 0) {
+    centenaSeconds = 0;
+    milesSeconds++;
   }
-  if(milesSeconds % 10 == 0 && milesSeconds != 0){
-    milesSeconds = 0
-    diezmilesSeconds++
+  if (milesSeconds % 6 == 0 && milesSeconds != 0) {
+    milesSeconds = 0;
+    diezmilesSeconds++;
   }
-  if(diezmilesSeconds % 10 == 0 && diezmilesSeconds != 0){
-    diezmilesSeconds = 0
-    cienmilesSeconds++
+  if (diezmilesSeconds % 10 == 0 && diezmilesSeconds != 0) {
+    diezmilesSeconds = 0;
+    cienmilesSeconds++;
+  }
+
+  if (cienmilesSeconds == 2 && diezmilesSeconds == 4) {
+    cienmilesSeconds = 3;
+  }
+  if (cienmilesSeconds % 3 == 0 && cienmilesSeconds != 0) {
+    tiempoSegundos = 0;
+    decenaSeconds = 0;
+    centenaSeconds = 0;
+    milesSeconds = 0;
+    diezmilesSeconds = 0;
+    cienmilesSeconds = 0;
   }
 
   ReactDOM.render(
-    <SecondsCounter cienmilesSeconds={cienmilesSeconds} diezmilesSeconds={diezmilesSeconds} milesSeconds={milesSeconds} centenaSeconds={centenaSeconds} decenaSeconds={decenaSeconds} seconds={tiempoSegundos} />,
+    <SecondsCounter
+      cienmilesSeconds={cienmilesSeconds}
+      diezmilesSeconds={diezmilesSeconds}
+      milesSeconds={milesSeconds}
+      centenaSeconds={centenaSeconds}
+      decenaSeconds={decenaSeconds}
+      seconds={tiempoSegundos}
+    />,
     document.querySelector("#app")
   );
-}, 1);
+}, 1000);
